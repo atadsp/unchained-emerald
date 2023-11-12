@@ -134,7 +134,6 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_DEFENSE_UP_2, AI_CBM_DefenseUp
 	if_effect EFFECT_SPEED_UP_2, AI_CBM_SpeedUp
 	if_effect EFFECT_SPECIAL_ATTACK_UP_2, AI_CBM_SpAtkUp
-	if_effect EFFECT_SPECIAL_ATTACK_UP_3, AI_CBM_SpAtkUp
 	if_effect EFFECT_SPECIAL_DEFENSE_UP_2, AI_CBM_SpDefUp
 	if_effect EFFECT_ACCURACY_UP_2, AI_CBM_AccUp
 	if_effect EFFECT_EVASION_UP_2, AI_CBM_EvasionUp
@@ -212,6 +211,7 @@ AI_CheckBadMove_CheckEffect:
 	if_effect EFFECT_WATER_SPORT, AI_CBM_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CBM_CalmMind
 	if_effect EFFECT_DRAGON_DANCE, AI_CBM_DragonDance
+	if_effect EFFECT_SPECIAL_ATTACK_UP_3, AI_CBM_SpAtkUp
 	end
 
 AI_CBM_Sleep:
@@ -690,7 +690,6 @@ AI_CheckViability:
 	if_effect EFFECT_DEFENSE_UP_2, AI_CV_DefenseUp
 	if_effect EFFECT_SPEED_UP_2, AI_CV_SpeedUp
 	if_effect EFFECT_SPECIAL_ATTACK_UP_2, AI_CV_SpAtkUp
-	if_effect EFFECT_SPECIAL_ATTACK_UP_3, AI_CV_SpAtkUp
 	if_effect EFFECT_SPECIAL_DEFENSE_UP_2, AI_CV_SpDefUp
 	if_effect EFFECT_ACCURACY_UP_2, AI_CV_AccuracyUp
 	if_effect EFFECT_EVASION_UP_2, AI_CV_EvasionUp
@@ -775,6 +774,7 @@ AI_CheckViability:
 	if_effect EFFECT_WATER_SPORT, AI_CV_WaterSport
 	if_effect EFFECT_CALM_MIND, AI_CV_SpDefUp
 	if_effect EFFECT_DRAGON_DANCE, AI_CV_DragonDance
+	if_effect EFFECT_SPECIAL_ATTACK_UP_3, AI_CV_SpAtkUp
 	end
 
 AI_CV_Sleep:
@@ -2654,7 +2654,6 @@ AI_SetupFirstTurn_SetupEffectsToEncourage:
 	.byte EFFECT_DEFENSE_UP_2
 	.byte EFFECT_SPEED_UP_2
 	.byte EFFECT_SPECIAL_ATTACK_UP_2
-	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte EFFECT_SPECIAL_DEFENSE_UP_2
 	.byte EFFECT_ACCURACY_UP_2
 	.byte EFFECT_EVASION_UP_2
@@ -2687,6 +2686,7 @@ AI_SetupFirstTurn_SetupEffectsToEncourage:
 	.byte EFFECT_BULK_UP
 	.byte EFFECT_CALM_MIND
 	.byte EFFECT_CAMOUFLAGE
+	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte -1
 
 @ ~60% chance to prefer moves that do 0 or 1 damage, or are in sIgnoredPowerfulMoveEffects
@@ -3002,7 +3002,6 @@ AI_HPAware_DiscouragedEffectsWhenMediumHP:
 	.byte EFFECT_DEFENSE_UP_2
 	.byte EFFECT_SPEED_UP_2
 	.byte EFFECT_SPECIAL_ATTACK_UP_2
-	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte EFFECT_SPECIAL_DEFENSE_UP_2
 	.byte EFFECT_ACCURACY_UP_2
 	.byte EFFECT_EVASION_UP_2
@@ -3021,6 +3020,7 @@ AI_HPAware_DiscouragedEffectsWhenMediumHP:
 	.byte EFFECT_BULK_UP
 	.byte EFFECT_CALM_MIND
 	.byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte -1
 
 AI_HPAware_DiscouragedEffectsWhenLowHP:
@@ -3047,7 +3047,6 @@ AI_HPAware_DiscouragedEffectsWhenLowHP:
 	.byte EFFECT_DEFENSE_UP_2
 	.byte EFFECT_SPEED_UP_2
 	.byte EFFECT_SPECIAL_ATTACK_UP_2
-	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte EFFECT_SPECIAL_DEFENSE_UP_2
 	.byte EFFECT_ACCURACY_UP_2
 	.byte EFFECT_EVASION_UP_2
@@ -3072,6 +3071,7 @@ AI_HPAware_DiscouragedEffectsWhenLowHP:
 	.byte EFFECT_BULK_UP
 	.byte EFFECT_CALM_MIND
 	.byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte -1
 
 AI_HPAware_DiscouragedEffectsWhenTargetHighHP:
@@ -3098,7 +3098,6 @@ AI_HPAware_DiscouragedEffectsWhenTargetMediumHP:
 	.byte EFFECT_DEFENSE_UP_2
 	.byte EFFECT_SPEED_UP_2
 	.byte EFFECT_SPECIAL_ATTACK_UP_2
-	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte EFFECT_SPECIAL_DEFENSE_UP_2
 	.byte EFFECT_ACCURACY_UP_2
 	.byte EFFECT_EVASION_UP_2
@@ -3118,6 +3117,7 @@ AI_HPAware_DiscouragedEffectsWhenTargetMediumHP:
 	.byte EFFECT_BULK_UP
 	.byte EFFECT_CALM_MIND
 	.byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte -1
 
 AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
@@ -3151,7 +3151,6 @@ AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
 	.byte EFFECT_DEFENSE_UP_2
 	.byte EFFECT_SPEED_UP_2
 	.byte EFFECT_SPECIAL_ATTACK_UP_2
-	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte EFFECT_SPECIAL_DEFENSE_UP_2
 	.byte EFFECT_ACCURACY_UP_2
 	.byte EFFECT_EVASION_UP_2
@@ -3181,6 +3180,7 @@ AI_HPAware_DiscouragedEffectsWhenTargetLowHP:
 	.byte EFFECT_BULK_UP
 	.byte EFFECT_CALM_MIND
 	.byte EFFECT_DRAGON_DANCE
+	.byte EFFECT_SPECIAL_ATTACK_UP_3
 	.byte -1
 
 @ Given the AI_TryOnAlly at the beginning it's possible that this was the start of a more

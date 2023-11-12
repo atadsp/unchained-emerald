@@ -140,7 +140,6 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_DEFENSE_UP_2] = 1,
     [EFFECT_SPEED_UP_2] = 1,
     [EFFECT_SPECIAL_ATTACK_UP_2] = 1,
-    [EFFECT_SPECIAL_ATTACK_UP_3] = 1,
     [EFFECT_SPECIAL_DEFENSE_UP_2] = 1,
     [EFFECT_ACCURACY_UP_2] = 1,
     [EFFECT_EVASION_UP_2] = 1,
@@ -300,7 +299,8 @@ static const u16 sPoints_MoveEffect[NUM_BATTLE_MOVE_EFFECTS] =
     [EFFECT_WATER_SPORT] = 4,
     [EFFECT_CALM_MIND] = 1,
     [EFFECT_DRAGON_DANCE] = 1,
-    [EFFECT_CAMOUFLAGE] = 3
+    [EFFECT_CAMOUFLAGE] = 3,
+    [EFFECT_SPECIAL_ATTACK_UP_3] = 1,
 };
 
 static const u16 sPoints_Effectiveness[] =

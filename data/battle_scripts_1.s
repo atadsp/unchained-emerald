@@ -72,7 +72,6 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectDefenseUp2             @ EFFECT_DEFENSE_UP_2
 	.4byte BattleScript_EffectSpeedUp2               @ EFFECT_SPEED_UP_2
 	.4byte BattleScript_EffectSpecialAttackUp2       @ EFFECT_SPECIAL_ATTACK_UP_2
-	.4byte BattleScript_EffectSpecialAttackUp3       @ EFFECT_SPECIAL_ATTACK_UP_3
 	.4byte BattleScript_EffectSpecialDefenseUp2      @ EFFECT_SPECIAL_DEFENSE_UP_2
 	.4byte BattleScript_EffectHit                    @ EFFECT_ACCURACY_UP_2
 	.4byte BattleScript_EffectHit                    @ EFFECT_EVASION_UP_2
@@ -233,6 +232,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectCalmMind               @ EFFECT_CALM_MIND
 	.4byte BattleScript_EffectDragonDance            @ EFFECT_DRAGON_DANCE
 	.4byte BattleScript_EffectCamouflage             @ EFFECT_CAMOUFLAGE
+	.4byte BattleScript_EffectSpecialAttackUp3       @ EFFECT_SPECIAL_ATTACK_UP_3
 
 BattleScript_EffectHit::
 	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
