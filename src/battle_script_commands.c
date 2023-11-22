@@ -1371,7 +1371,8 @@ static void Cmd_typecalc(void)
         if (IS_BATTLER_ADAPTABILITY(gBattlerAttacker)) 
         {
             gBattleMoveDamage *= 2;
-        } else 
+        } 
+        else 
         {
             gBattleMoveDamage = (gBattleMoveDamage * 15) / 10;
         }
