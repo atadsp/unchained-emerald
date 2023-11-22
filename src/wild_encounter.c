@@ -205,8 +205,10 @@ static u8 ChooseWildMonIndex_Land(void)
         return 9;
     else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_9 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_10)
         return 10;
-    else
+    else if (rand >= ENCOUNTER_CHANCE_LAND_MONS_SLOT_10 && rand < ENCOUNTER_CHANCE_LAND_MONS_SLOT_11)
         return 11;
+    else
+        return 12;
 }
 
 // ROCK_WILD_COUNT / WATER_WILD_COUNT

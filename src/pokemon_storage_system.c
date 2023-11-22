@@ -7097,12 +7097,12 @@ static u8 InBoxInput_Normal(void)
             {
                 switch (GetMenuItemTextId(0))
                 {
+                case MENU_MOVE:
+                    return INPUT_MOVE_MON;
                 case MENU_STORE:
                     return INPUT_DEPOSIT;
                 case MENU_WITHDRAW:
                     return INPUT_WITHDRAW;
-                case MENU_MOVE:
-                    return INPUT_MOVE_MON;
                 case MENU_SHIFT:
                     return INPUT_SHIFT_MON;
                 case MENU_PLACE:
@@ -7378,12 +7378,12 @@ static u8 HandleInput_InParty(void)
 
                 switch (GetMenuItemTextId(0))
                 {
+                case MENU_MOVE:
+                    return INPUT_MOVE_MON;
                 case MENU_STORE:
                     return INPUT_DEPOSIT;
                 case MENU_WITHDRAW:
                     return INPUT_WITHDRAW;
-                case MENU_MOVE:
-                    return INPUT_MOVE_MON;
                 case MENU_SHIFT:
                     return INPUT_SHIFT_MON;
                 case MENU_PLACE:
@@ -7623,18 +7623,6 @@ static bool8 SetMenuTexts_Mon(void)
 
     switch (sStorage->boxOption)
     {
-    case OPTION_DEPOSIT:
-        if (species != SPECIES_NONE)
-            SetMenuText(MENU_STORE);
-        else
-            return FALSE;
-        break;
-    case OPTION_WITHDRAW:
-        if (species != SPECIES_NONE)
-            SetMenuText(MENU_WITHDRAW);
-        else
-            return FALSE;
-        break;
     case OPTION_MOVE_MONS:
         if (sIsMonBeingMoved)
         {
@@ -7650,6 +7638,18 @@ static bool8 SetMenuTexts_Mon(void)
             else
                 return FALSE;
         }
+        break;
+    case OPTION_DEPOSIT:
+        if (species != SPECIES_NONE)
+            SetMenuText(MENU_STORE);
+        else
+            return FALSE;
+        break;
+    case OPTION_WITHDRAW:
+        if (species != SPECIES_NONE)
+            SetMenuText(MENU_WITHDRAW);
+        else
+            return FALSE;
         break;
     case OPTION_MOVE_ITEMS:
     default:

@@ -225,6 +225,9 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 static const u16 sNewGamePCItems[][2] =
 {
     { ITEM_POTION, 1 },
+    { ITEM_CHARCOAL, 1 },
+    { ITEM_MIRACLE_SEED, 1 },
+    { ITEM_MYSTIC_WATER, 1 },
     { ITEM_NONE, 0 }
 };
 
