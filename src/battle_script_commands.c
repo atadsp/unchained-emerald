@@ -1700,6 +1700,15 @@ static void Cmd_adjustnormaldamage(void)
             gLastUsedItem = gBattleMons[gBattlerTarget].item;
         }
     }
+
+    if (
+        gBattleMons[gBattlerTarget].ability == ABILITY_STURDY 
+        && gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP 
+        && gBattleMons[gBattlerTarget].maxHP <= gBattleMoveDamage)
+    {
+        gBattleMoveDamage = (gBattleMons[gBattlerTarget].maxHP - 1);
+        RecordAbilityBattle(gBattlerTarget, ABILITY_STURDY);
+    }
     gBattlescriptCurrInstr++;
 }
 
@@ -1742,6 +1751,15 @@ static void Cmd_adjustnormaldamage2(void)
             gMoveResultFlags |= MOVE_RESULT_FOE_HUNG_ON;
             gLastUsedItem = gBattleMons[gBattlerTarget].item;
         }
+    }
+
+    if (
+        gBattleMons[gBattlerTarget].ability == ABILITY_STURDY 
+        && gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP 
+        && gBattleMons[gBattlerTarget].maxHP <= gBattleMoveDamage)
+    {
+        gBattleMoveDamage = (gBattleMons[gBattlerTarget].maxHP - 1);
+        RecordAbilityBattle(gBattlerTarget, ABILITY_STURDY);
     }
     gBattlescriptCurrInstr++;
 }
