@@ -1702,8 +1702,8 @@ static void Cmd_adjustnormaldamage(void)
     }
 
     if (
-        gBattleMons[gBattlerTarget].ability == ABILITY_STURDY 
-        && gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP 
+        gBattleMons[gBattlerTarget].ability == ABILITY_STURDY
+        && gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP
         && gBattleMons[gBattlerTarget].maxHP <= gBattleMoveDamage)
     {
         gBattleMoveDamage = (gBattleMons[gBattlerTarget].maxHP - 1);
@@ -1754,8 +1754,8 @@ static void Cmd_adjustnormaldamage2(void)
     }
 
     if (
-        gBattleMons[gBattlerTarget].ability == ABILITY_STURDY 
-        && gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP 
+        gBattleMons[gBattlerTarget].ability == ABILITY_STURDY
+        && gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP
         && gBattleMons[gBattlerTarget].maxHP <= gBattleMoveDamage)
     {
         gBattleMoveDamage = (gBattleMons[gBattlerTarget].maxHP - 1);
