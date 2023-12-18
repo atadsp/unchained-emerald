@@ -292,7 +292,8 @@
 #define MOVE_EFFECT_NOTHING_3A          58
 #define MOVE_EFFECT_SP_ATK_TWO_DOWN     59
 #define MOVE_EFFECT_SP_ATK_PLUS_3       60
-#define NUM_MOVE_EFFECTS                61
+#define MOVE_EFFECT_ATK_PLUS_3          61
+#define NUM_MOVE_EFFECTS                62
 
 #define MOVE_EFFECT_AFFECTS_USER        (1 << 6) // 64
 #define MOVE_EFFECT_CERTAIN             (1 << 7) // 128
