@@ -13,7 +13,7 @@ Scyther -> Scizor = Use Metal Coat on Scyther
 Porygon -> Porygon2 = Use Up Grade on Porygon 
 Eevee -> Espeon = Use Sunstone on Eevee OR High Friendship Levelup during the Night
 Eevee -> Umbreon = Use Moonstone on Eevee OR High Friendship Levelup during the Day
-Feebas -> Milotic = Use Dragon Scale on Feebas OR get Beauty to 170 and level up
+Feebas -> Milotic = Use Water Stone on Feebas OR get Beauty to 170 and level up
 Clamperl -> Huntail = Use Deep Sea Tooth on Clamperl 
 Clamperl -> Gorebyss = Use Deep Sea Scale on Clamperl
 
@@ -26,12 +26,16 @@ Pokemon Changes:
 	All Pokemon now have two abilities (With a few exceptions like Shedinja)
 	All pokemon now have a common and rare item
 	All wild pokemon will have an item
-	EVs cap at 252 instead of 255
-	All EVs can be maxed to 252 like in generation 1 and 2
+	All Pokemon will fully evolve by level 45
 	IN PROGRESS:
 		Wild pokemon encounters expanded to allow catching all pokemon
+		Currently done up to Gym 3
 	TODO:
-		Add future Evolutions for existing pokemon from future gens into the game
+		Add future Evolutions, regional variants, and paradox versions of existing pokemon from future gens into the game
+		Gen 3: 
+			Deoxys - Attack Forme
+			Deoxys - Defense Forme
+			Deoxys - Speed Forme
 		Gen 4 Sprites: 
 			Budew
 			Roserade
@@ -44,11 +48,11 @@ Pokemon Changes:
 			Happiny
 			Munchlax
 			Mantyke 
-			Weevile
+			Weavile
 			Lickilicky
 			Rhyperior 
 			Tangrowth
-			Electrivire
+			Electivire
 			Magmortar
 			Togekiss
 			Yanmega
@@ -60,22 +64,87 @@ Pokemon Changes:
 			Gallade
 			Probopass
 			Dusknoir
-			Frosslass
+			Froslass
 			Regigigas 
 		New Sprite Work?:
+			Meowth - Alolan
+			Meowth - Galarian
+			Persian - Alolan
+			Growlithe - Hisuian
+			Arcanine - Hisuian
+			Geodude - Alolan
+			Graveler - Alolan
+			Golem - Alolan
+			Ponyta - Galarian
+			Rapidash - Galarian
+			Slowpoke - Galarian
+			Slowbro - Galarian
+			Farfetch'd - Galarian
+			Grimer - Alolan
+			Muk - Alolan
+			Voltorb - Hisuian
+			Electrode - Hisuian
+			Exeggutor - Alolan
+			Marowak - Alolan
+			Weezing - Galarian
+			Mr. Mime - Galarian
+			Tauros - Aqua Breed
+			Tauros - Blaze Breed
+			Tauros - Combat Breed
+			Articuno - Galarian
+			Zapdos - Galarian
+			Moltres - Galarian
+			Typhlosion - Hisuian 
+			Wooper - Paldean
+			Slowking - Galarian
+			Qwilfish - Hisuian
+			Sneasel - Hisuian
+			Corsola - Galarian
+			Zigzagoon - Galarian
+			Linoone - Galarian
 			Sylveon
+			Mimikyu
+			Obstagoon
+			Perrserker
+			Cursola
+			Sirfetch'd
+			Mr. Rime
 			Regieleki
 			Regidrago
 			Wyrdeer
 			Kleavor
 			Ursaluna
+			Sneasler
+			Overqwil
+			Toedscool
+			Toedscruel
+			Wiglett
+			Wugtrio
 			Annihilape
+			Clodsire
 			Farigiraf
-			Dudunspace
-			Kingambit
+			Dudunsparce - Two Body Segement
+			Dudunsparce - Three Body Segement
+			Great Tusk
+			Scream Tail
+			Flutter Mane
+			Sandy Shocks
+			Iron Treads
+			Iron Bundle
+			Iron Hands
+			Iron Thorns
+			Roaring Moon
+			Iron Valiant
+			Walking Wake
 
+Venusaur:
+	HP: 80 -> 90
+Charizard:
+	Type Change: Fire / Dragon
+	Special Attack: 109->110
 Blastoise: 
 	Type Change: Water / Steel
+	HP: 79 -> 84
 Butterfree:
 	Special Attack: 80 -> 90
 Beedrill: 
@@ -93,7 +162,7 @@ Raichu:
 Sandshrew: 
 	Special Attack: 20 -> 30
 Sandslash: 
-	Special Attack: 55 -> 65
+	Special Attack: 45 -> 55
 Nidoqueen:
 	Attack: 82 -> 92
 Nidoking:
@@ -185,6 +254,8 @@ Exeggcute:
 	Special Defense: 45 -> 60
 Exeggutor: 
 	Special Defense: 65 -> 125
+Marowak: 
+	Type Change: Ground / Ghost
 Koffing: 
 	Special Defense: 45 -> 60
 Weezing:
@@ -216,7 +287,7 @@ Lapras:
 Eevee:
 	Special Attack: 45 -> 65
 Vaporeon:
-	Special Attack: 95 -> 110
+	Special Defense: 95 -> 110
 Jolteon:
 	Special Defense: 95 -> 110
 Flareon:
@@ -226,10 +297,17 @@ Omanyte:
 Omastar: 
 	Special Defense: 70 -> 115
 Kabutops:
-	Special Attack: 65 -> 70
+	Special Attack: 65 -> 110
+Aerodactyl:
+	HP: 80 -> 100
+	Attack: 105 -> 110
+	Special Attack: 65 -> 75 
 Articuno:
+	Attack: 85 -> 90
 	Special Attack: 95 -> 125
+	Speed: 85 -> 90
 Zapdos: 
+	Defense: 85 -> 90
 	Special Defense: 90 -> 125
 Moltres:
 	Special Defense: 80 -> 125
@@ -237,6 +315,13 @@ Mewtwo:
 	Special Defense: 90 -> 154
 Mew:
 	Type Change: Psychic / Fairy
+	All Stats: 100 -> 110
+Meganium:
+	Special Attack: 83 -> 93
+Typhlosion:
+	Special Attack: 109 -> 110
+Feraligatr:
+	Special Attack: 79 -> 84
 Noctowl:
 	Special Attack: 76 -> 86
 Ariados:
@@ -256,10 +341,12 @@ Azumarill:
 	Special Attack: 50 -> 60
 Jumpluff:
 	Special Defense: 85 -> 95
+Yanma: 
+	Speed: 95 -> 100 
 Espeon:
-	Special Defense: 95 -> 115
+	Special Defense: 95 -> 110
 Umbreon:
-	Special Attack: 60 -> 80
+	HP: 95 -> 110
 Quillfish:
 	Defense: 75 -> 85
 Sneasel:
@@ -275,23 +362,48 @@ Mantine:
 	HP: 65 -> 85
 Kingdra: 
 	Special Defense: 95 -> 110
-Bissey: 
+Blissey: 
 	Special Attack: 75 -> 115
-Lugia: (To match Mewtwo)
+Raikou:
+	Defense: 75 -> 90
+	Special Attack: 115 -> 125
+	Special Defense: 100 -> 105
+	Speed: 115 -> 125
+Entei:
+	Defense: 85 -> 95
+	Special Attack: 90 -> 115
+	Special Deense: 75 -> 80
+Suicune: 
+	HP: 100 -> 120
+	Defense: 115 -> 120
+	Special Attack: 90 -> 100
+	Special Defense: 115 -> 120
+Lugia:
 	Type Change: Water / Flying
 	HP: 106 -> 120
 	Attack: 90 -> 105
 	Special Attack: 90 -> 105
-Ho-oh: (To match Mewtwo)
+	Special Defense: 154 -> 174
+Ho-oh:
 	HP: 106 -> 120
 	Defense: 90 -> 105 
+	Special Defense: 154 -> 174
 	Speed: 90 -> 105
 Celebi:
 	Type Change: Fairy / Grass
+	All Stats: 100 -> 110
 Sceptile:
 	Type Change: Grass / Dragon
+	HP: 70 -> 71
+	Defense: 65 -> 69
+Blaziken:
+	Defense: 70 -> 72
+	Special Defense: 70 -> 72
+	Speed: 80 -> 81
 Beautifly:
 	Speical Attack: 90 -> 100
+Dustox:
+	Attack: 50 -> 60
 Dustox:
 	Speical Defense: 90 -> 100
 Swellow:
@@ -300,7 +412,7 @@ Pelipper:
 	Special Attack: 85 -> 95
 Masquerain:
 	Type Change: Bug / Water
-Shedinja: (because I can)
+Shedinja:
 	Defense: 45 -> 1
 	Special Attack: 30 -> 90
 	Special Defense: 30 -> 1
@@ -308,52 +420,97 @@ Shedinja: (because I can)
 Exploud:
 	Special Defense: 64 -> 73
 Delcatty:
+	Type Change: Normal / Fairy
 	Speed: 70 -> 90
+Aggron:
+	HP: 70 -> 95
 Volbeat:
+	Type Change: Bug / Electric
 	Defense: 55 -> 75
 	Special Defense: 75 -> 85
 Illumise:
+	Type Change: Bug / Psychic
 	Defense: 55 -> 75
 	Special Defense: 75 -> 85
+Grumpig:
+	Type Change: Psychic / Dark
+Spinda:
+	Type ChangeL Normal / Fighting
+	All Stats: 60 -> 69
 Trapinch:
 	Type Change: Bug / Ground
 Vibrava:
 	Type Change: Bug / Dragon
 Flygon:
 	Type Change: Bug / Dragon
+	All Stats: +5
 Lunatone:
 	HP: 70 -> 90
 Solrock:
 	HP: 70 -> 90
+Cradily:
+	HP: 86 -> 110
+	Attack: 81 -> 83
+	Defense: 97 -> 110
+	Special Attack: 81 -> 83 
+	Special Defense: 107 -> 110
+	Speed: 43 -> 44
+Armaldo:
+	HP: 75 -> 95
+	Attack: 125 -> 135
+	Defense: 100 -> 110
+	Special Attack: 70 -> 75
+Kecleon:
+	Type Change: Normal / Ghost
 Chimecho:
 	HP: 65 -> 75
 	Defense: 70 -> 80
 	Special Defense: 80 -> 90
+Absol:
+	Speed: 75 -> 90
 Regirock:
-	HP: 80 -> 100
+	HP: 80 -> 120
 Regice:
-	HP: 80 -> 100
+	HP: 80 -> 120
 Registeel:
-	HP: 80 -> 100
+	HP: 80 -> 120
+Latias:
+	Special Defense: 130 -> 150
+Latios: 
+	Special Attack: 130 -> 150
 Kyogre:
-	Attack: 100 -> 125
+	Attack: 100 -> 135
 	Special Attack: 150 -> 165
-	Special Defense: 150 -> 150
+	Special Defense: 140 -> 150
 Groudon:
 	Attack: 150 -> 165
 	Defense: 140 -> 150
-	Special Attack: 100 -> 125
+	Special Attack: 100 -> 135
+Rayquaza:
+	Attack: 150 -> 165
+	Defense: 90 -> 100
+	Special Attack: 150 -> 165
+	Special Defense: 90 -> 100
+	Speed: 95 -> 109
 Jirachi:
 	Type Change: Steel / Fairy 
+	All Stats: 100 -> 110
+Deoxys (Normal):
+	HP: 50 -> 60
+	Attack: 150 -> 160
+	Defense: 50 -> 60
+	Special Attack: 150 -> 160
+	Special Defense: 50 -> 60
+	Speed: 150 -> 160
 
 Move Changes: 
+	HMs can be forgotten without the Move Deleter
 	Added the following as Fairy Type Moves: (Not tested yet)
 		Moonblast
 		Disarming Voice (Fairy Kiss)
 		Fleur Cannon
 		Draining Kiss (Drain Kiss)
 	Following changes to existing moves: 
-		Made SWORDS DANCE have 20 PP
 		Made CHARM Fairy type
 		Made Moonlight Fairy Type
 		Made Sweet Kiss Fairy Type
@@ -373,9 +530,6 @@ Move Changes:
 		Made FIRE SPIN have 35 power and 85% accuracy
 		Made DIG have 100 power
 		Made TOXIC have 90% accuracy
-		Made RECOVER have 10 PP
-		Made MINIMIZE have 10 PP
-		Made BARRIER have 20 PP
 		Made LICK have 30 power
 		Made SMOG have 30 power
 		Made CLAMP have 15 PP and 85% accuracy
@@ -386,7 +540,6 @@ Move Changes:
 		Made BUBBLE have 40 power
 		Made FLASH have 100% accuracy
 		Made PSYWAVE have 100% accuracy
-		Made ACID ARMOR have 20 PP
 		Made CRABHAMMER have 100 power and 90% accuracy
 		Made THIEF have 60 power and 25 PP
 		Made SNORE have 50 power
@@ -411,7 +564,6 @@ Move Changes:
 		Made AIR CUTTER have 60 power
 		Made OVERHEAT have 130 power
 		Made ROCK TOMB have 60 power, 15 PP and 95% accuracy
-		Made EXTRASENSORY have 20 PP
 		Made SAND TOMB have 35 power and 85% accuracy
 		Made BULLET SEED have 25 power
 		Made ICICLE SPEAR have 25 power
@@ -419,9 +571,37 @@ Move Changes:
 		Made LEAF BLADE have 90 power
 		Made ROCK BLAST have 90% accuracy
 		Made DOOM DESIRE have 140 power and 100% accuracy
+		Made LEECH LIFE have 80 power and 10 pp
+		Made BLIZZARD have 85% accuracy like FIREBLAST
+		Made THUNDER have 85% accuracy like FIREBLAST but Paralyze chance is dropped from 30% to 10% and PP reduced to 5
+		All Trapping moves Bind / Wrap / Fire Spin / Whirlpool / Clamp / Sand Tomb now last 4 or 5 turns and deal 1/8th damage if active 
+		Psychic's chance to lower special defense increased from 10% to 30%
 	TODO:
 		Add more moves to give each type good moves
+			Scald
+			Flash Cannon
+			Steel Beam
+			Gunk Shot
+			Brave Bird
+			Roost
+			Others as I think of them
 		Add animations to new moves
+		Make Teleport switch pokemon out
+
+Ability Changes:
+	New Abilties from previous gens: 
+		Multiscale (untested)
+		Adaptability (untested)
+		Skill Link (untested)
+	Changed Abilties:
+		Huge Power now doubles Special Attacking Moves (Pure Power still doubles physical attacking moves)
+	In Progress:
+		Add more abilties to make each pokemon more unique, remove the following for being useless
+			Run Away 
+			Forewarn
+			Illuminate 
+			Plus
+			Minus
 
 Trainer Changes: 
 	All trainers now have: 
@@ -433,7 +613,7 @@ Trainer Changes:
 	IN PROGRESS:
 		All Trainer Pokemons have items
 		Trainers teams reworked for increased diffculty
-			done through Roxanne - Testing it now for optimal diffculty
+			done through Wattson - Testing it now for optimal diffculty
 			Steven Stone frist match is done but not tested
 	TODO:
 		Elite 4 rematch teams
@@ -452,6 +632,13 @@ Item changes:
 	Sitrus berry have been increased to restore 1/4 of the user's max HP 
 	TMs should have infinite use
 	All repels now block encounters for 255 steps (so only buy base repels)
+	Light Ball now works like how it does in later gens (boosting Pikachu's attack and special attack)
+	"Usless" Field Items have been replaced including:
+		All X-Items
+		Guard Spec
+		Dire Hit
+		All Mails
+		All "sell only" items
 	Experience Share changes
 		Main mon still gets full experience from battle
 		each mon with an exp share equipped gets half the total exp 
@@ -466,15 +653,22 @@ Item changes:
 			Max Repel 750
 
 Other Changes:
+	Money from trainers increased by 25%
 	Money loss for white out reduced to 1/10 instead of 1/2
-	Text speed set to fast by default
+	Text speed set to FAST by default
+	Battle Style set to SET by dewfault
 	Allow Running in any location
 	Always running unless you hold B
 	You no longer need to have a pokemon that knows a field move to use it (still need appropriate gym badges)
+		Move that you use from a menu still must be taught like Fly and Flash
+	EVs cap at 252 instead of 255
+	All EVs can be maxed to 252 like in generation 1 and 2
+	Vitamins can be used to max out EVs like in later gens
+	Shiny Odds increased from 1/8192 to 1/1024
+	You now buy coins in increments of 500 for 1,000 and 5,000 for 10,000 (10x more coin per $$) 
 
 Current Know Issues:
 	Low Priority: 
-		Text for fairy type moves are messed up in the battle menu
-		Text for fairy type filtering in pokedex is bugged (functionality works though)
+		None that I know of
 	Medium Priority:
 		No Animations for new Fairy type moves (Moves still work as expected)

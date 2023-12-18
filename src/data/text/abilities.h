@@ -35,7 +35,7 @@ static const u8 sSwiftSwimDescription[] = _("Raises SPEED in rain.");
 static const u8 sChlorophyllDescription[] = _("Raises SPEED in sunshine.");
 static const u8 sIlluminateDescription[] = _("Encounter rate increases.");
 static const u8 sTraceDescription[] = _("Copies special ability.");
-static const u8 sHugePowerDescription[] = _("Raises ATTACK.");
+static const u8 sHugePowerDescription[] = _("Doubles SPECIAL ATTACK.");
 static const u8 sPoisonPointDescription[] = _("Poisons foe on contact.");
 static const u8 sInnerFocusDescription[] = _("Prevents flinching.");
 static const u8 sMagmaArmorDescription[] = _("Prevents freezing.");
@@ -72,10 +72,14 @@ static const u8 sDroughtDescription[] = _("Summons sunlight in battle.");
 static const u8 sArenaTrapDescription[] = _("Prevents fleeing.");
 static const u8 sVitalSpiritDescription[] = _("Prevents sleep.");
 static const u8 sWhiteSmokeDescription[] = _("Prevents ability reduction.");
-static const u8 sPurePowerDescription[] = _("Raises ATTACK.");
+static const u8 sPurePowerDescription[] = _("Doubles ATTACK.");
 static const u8 sShellArmorDescription[] = _("Blocks critical hits.");
 static const u8 sCacophonyDescription[] = _("Avoids sound-based moves.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
+static const u8 sMultiscaleDescription[] = _("1/2 damage if HP is full.");
+static const u8 sAdaptabilityDescription[] = _("Powers up Super Effective hits.");
+static const u8 sSkillLinkDescription[] = _("Multi hit moves hit for max.");
+static const u8 sMagicGuardDescription[] = _("Protects from indirect damage.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -157,6 +161,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SHELL_ARMOR] = _("SHELL ARMOR"),
     [ABILITY_CACOPHONY] = _("CACOPHONY"),
     [ABILITY_AIR_LOCK] = _("AIR LOCK"),
+    [ABILITY_MULTISCALE] = _("MULTISCALE"),
+    [ABILITY_ADAPTABILITY] = _("ADAPTABILITY"),
+    [ABILITY_SKILL_LINK] = _("SKILL LINK"),
+    [ABILITY_MAGIC_GUARD] = _("MAGIC GUARD"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -239,4 +247,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SHELL_ARMOR] = sShellArmorDescription,
     [ABILITY_CACOPHONY] = sCacophonyDescription,
     [ABILITY_AIR_LOCK] = sAirLockDescription,
+    [ABILITY_MULTISCALE] = sMultiscaleDescription,
+    [ABILITY_ADAPTABILITY] = sAdaptabilityDescription,
+    [ABILITY_SKILL_LINK] = sSkillLinkDescription,
+    [ABILITY_MAGIC_GUARD] = sMagicGuardDescription,
 };

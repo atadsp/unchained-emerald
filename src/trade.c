@@ -1574,17 +1574,10 @@ static u8 CheckValidityOfTradeMons(u8 *aliveMons, u8 playerPartyCount, u8 player
     partnerMonIdx %= PARTY_SIZE;
     partnerSpecies = GetMonData(&gEnemyParty[partnerMonIdx], MON_DATA_SPECIES);
 
-    // Partner cant trade illegitimate Deoxys or Mew
-    if (partnerSpecies == SPECIES_DEOXYS || partnerSpecies == SPECIES_MEW)
-    {
-        if (!GetMonData(&gEnemyParty[partnerMonIdx], MON_DATA_MODERN_FATEFUL_ENCOUNTER))
-            return PARTNER_MON_INVALID;
-    }
-
-    // Partner cant trade Egg or non-Hoenn mon if player doesn't have National Dex
+    // Partner cant trade Egg
     if (!IsNationalPokedexEnabled())
     {
-        if (sTradeMenu->isEgg[TRADE_PARTNER][partnerMonIdx] || !IsSpeciesInHoennDex(partnerSpecies))
+        if (sTradeMenu->isEgg[TRADE_PARTNER][partnerMonIdx])
             return PARTNER_MON_INVALID;
     }
 

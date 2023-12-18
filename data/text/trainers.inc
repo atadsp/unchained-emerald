@@ -536,7 +536,7 @@ Route105_Text_JosuePostBattle:
 
 Route106_Text_ElliotIntro:
 	.string "Hey you, Pikachu I want\n"
-	.string "You on my team!\n"
+	.string "You on my team!\p"
 	.string "Your shocking 'lectric powers\n"
 	.string "Complement my water theme!$"
 
@@ -547,7 +547,7 @@ Route106_Text_ElliotDefeated:
 Route106_Text_ElliotPostBattle:
 	.string "Have you seen my Gyarados around?\n"
 	.string "I hope that Pikachu is okay.\l"
-	.string "Tell me if you see him.?$"
+	.string "Tell me if you see him?$"
 
 Route106_Text_ElliotRegister:
 	.string "I still haven't found my Gyarados...\n"
