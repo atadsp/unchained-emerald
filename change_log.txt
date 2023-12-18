@@ -254,6 +254,8 @@ Exeggcute:
 	Special Defense: 45 -> 60
 Exeggutor: 
 	Special Defense: 65 -> 125
+Marowak: 
+	Type Change: Ground / Ghost
 Koffing: 
 	Special Defense: 45 -> 60
 Weezing:
@@ -434,12 +436,14 @@ Grumpig:
 	Type Change: Psychic / Dark
 Spinda:
 	Type ChangeL Normal / Fighting
+	All Stats: 60 -> 69
 Trapinch:
 	Type Change: Bug / Ground
 Vibrava:
 	Type Change: Bug / Dragon
 Flygon:
 	Type Change: Bug / Dragon
+	All Stats: +5
 Lunatone:
 	HP: 70 -> 90
 Solrock:
@@ -588,10 +592,16 @@ Ability Changes:
 	New Abilties from previous gens: 
 		Multiscale (untested)
 		Adaptability (untested)
+		Skill Link (untested)
 	Changed Abilties:
 		Huge Power now doubles Special Attacking Moves (Pure Power still doubles physical attacking moves)
 	In Progress:
-		Add more abilties to make each pokemon more unique, depricate less mechanically interesting abilties (looking at you Run Away)
+		Add more abilties to make each pokemon more unique, remove the following for being useless
+			Run Away 
+			Forewarn
+			Illuminate 
+			Plus
+			Minus
 
 Trainer Changes: 
 	All trainers now have: 
@@ -655,6 +665,7 @@ Other Changes:
 	All EVs can be maxed to 252 like in generation 1 and 2
 	Vitamins can be used to max out EVs like in later gens
 	Shiny Odds increased from 1/8192 to 1/1024
+	You now buy coins in increments of 500 for 1,000 and 5,000 for 10,000 (10x more coin per $$) 
 
 Current Know Issues:
 	Low Priority: 

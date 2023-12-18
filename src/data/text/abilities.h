@@ -78,6 +78,8 @@ static const u8 sCacophonyDescription[] = _("Avoids sound-based moves.");
 static const u8 sAirLockDescription[] = _("Negates weather effects.");
 static const u8 sMultiscaleDescription[] = _("1/2 damage if HP is full.");
 static const u8 sAdaptabilityDescription[] = _("Powers up Super Effective hits.");
+static const u8 sSkillLinkDescription[] = _("Multi hit moves hit for max.");
+static const u8 sMagicGuardDescription[] = _("Protects from indirect damage.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -161,6 +163,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_AIR_LOCK] = _("AIR LOCK"),
     [ABILITY_MULTISCALE] = _("MULTISCALE"),
     [ABILITY_ADAPTABILITY] = _("ADAPTABILITY"),
+    [ABILITY_SKILL_LINK] = _("SKILL LINK"),
+    [ABILITY_MAGIC_GUARD] = _("MAGIC GUARD"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -245,4 +249,6 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_AIR_LOCK] = sAirLockDescription,
     [ABILITY_MULTISCALE] = sMultiscaleDescription,
     [ABILITY_ADAPTABILITY] = sAdaptabilityDescription,
+    [ABILITY_SKILL_LINK] = sSkillLinkDescription,
+    [ABILITY_MAGIC_GUARD] = sMagicGuardDescription,
 };

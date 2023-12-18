@@ -46,7 +46,7 @@ MauvilleCity_GameCorner_EventScript_Buy50Coins::
 	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 50), MauvilleCity_GameCorner_EventScript_NoRoomForCoins
 	checkmoney COINS_PRICE_50
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NotEnoughMoney
-	addcoins 50
+	addcoins 500
 	removemoney COINS_PRICE_50
 	updatemoneybox
 	updatecoinsbox 1, 6
@@ -62,7 +62,7 @@ MauvilleCity_GameCorner_EventScript_Buy500Coins::
 	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 500), MauvilleCity_GameCorner_EventScript_NoRoomForCoins
 	checkmoney COINS_PRICE_500
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NotEnoughMoney
-	addcoins 500
+	addcoins 5000
 	removemoney COINS_PRICE_500
 	updatemoneybox
 	updatecoinsbox 1, 6
@@ -637,7 +637,7 @@ MauvilleCity_GameCorner_Text_NeedCoinCaseForCoins:
 
 MauvilleCity_GameCorner_Text_WereYouLookingForCoins:
 	.string "Were you looking for COINS?\p"
-	.string "It's ¥1000 for 50 COINS.\n"
+	.string "It's ¥1000 for 500 COINS.\n"
 	.string "Would you like some?$"
 
 MauvilleCity_GameCorner_Text_ThankYouHereAreYourCoins:
