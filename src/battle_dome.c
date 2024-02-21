@@ -2507,11 +2507,12 @@ static void InitDomeTrainers(void)
     Free(statValues);
 }
 
-#define CALC_STAT(base, statIndex)                                                          \
-{                                                                                           \
-    u8 baseStat = gSpeciesInfo[species].base;                                                 \
-    stats[statIndex] = (((2 * baseStat + ivs + evs[statIndex] / 4) * level) / 100) + 5;     \
-    stats[statIndex] = (u8) ModifyStatByNature(nature, stats[statIndex], statIndex);        \
+#define CALC_STAT(base, statIndex)                                                                      \
+{                                                                                                       \
+    u8 baseStat = gSpeciesInfo[species].base;                                                           \
+    u8 ivs = 31;                                                                                        \
+    stats[statIndex] = (((2 * baseStat + ivs + (Sqrt(evs[statIndex])/4)) * level) / 100) + 5;           \
+    stats[statIndex] = (u8) ModifyStatByNature(nature, stats[statIndex], statIndex);                    \
 }
 
 static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 nature, int *stats)
@@ -2531,7 +2532,7 @@ static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 natu
     resultingEvs = MAX_TOTAL_EVS / count;
     for (i = 0; i < NUM_STATS; bits <<= 1, i++)
     {
-        evs[i] = 0;
+        evs[i] = 1;
         if (evBits & bits)
             evs[i] = resultingEvs;
     }
@@ -2543,7 +2544,7 @@ static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 natu
     else
     {
         int n = 2 * gSpeciesInfo[species].baseHP;
-        stats[STAT_HP] = (((n + ivs + evs[STAT_HP] / 4) * level) / 100) + level + 10;
+        stats[STAT_HP] = (((n + (Sqrt(evs[STAT_HP])/4)) * level) / 100) + 10;
     }
 
     CALC_STAT(baseAttack, STAT_ATK);

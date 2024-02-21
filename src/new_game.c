@@ -92,9 +92,12 @@ static void SetDefaultOptions(void)
 {
     gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
-    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_MONO;
+    gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SET;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
+    gSaveBlock2Ptr->optionsEnforceLevelCap = OPTIONS_LEVEL_CAP_ON;
+    gSaveBlock2Ptr->optionsExperienceMultiplier = OPTIONS_EXPERIENCE_MULTIPLIER_ONE;
+    gSaveBlock2Ptr->optionsAllowBattleItems = 0;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
 }
 
@@ -204,6 +207,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_NATIONAL;
 }
 
 static void ResetMiniGamesRecords(void)

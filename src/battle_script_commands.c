@@ -3282,6 +3282,11 @@ static void Cmd_jumpiftype(void)
         gBattlescriptCurrInstr += 7;
 }
 
+static u16 GetPlayerExpMultiplier(void)
+{
+    return gSaveBlock2Ptr->optionsExperienceMultiplier;
+}
+
 static void Cmd_getexp(void)
 {
     u16 item;
@@ -3323,6 +3328,8 @@ static void Cmd_getexp(void)
             {
                 if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
                     continue;
+                if (GetPlayerEnforcedLevelCap() == 1 && GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > GetCurrentLevelCap())
+                    continue;
                 if (gBitTable[i] & sentIn)
                     viaSentIn++;
 
@@ -3338,6 +3345,10 @@ static void Cmd_getexp(void)
             }
 
             calculatedExp = gSpeciesInfo[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 7;
+            if(GetPlayerExpMultiplier() == OPTIONS_EXPERIENCE_MULTIPLIER_HALF)
+                calculatedExp = calculatedExp / 2;
+            if(GetPlayerExpMultiplier() == OPTIONS_EXPERIENCE_MULTIPLIER_TWO)
+                calculatedExp = calculatedExp * 2;
 
             if (viaExpShare) // at least one mon is getting exp via exp share
             {
@@ -9980,8 +9991,6 @@ static void Cmd_handleballthrow(void)
 
         if (odds > 254) // mon caught
         {
-            // award exp here 
-            Cmd_getexp();
             BtlController_EmitBallThrowAnim(BUFFER_A, BALL_3_SHAKES_SUCCESS);
             MarkBattlerForControllerExec(gActiveBattler);
             gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;

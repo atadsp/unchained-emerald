@@ -789,7 +789,7 @@ u8 GetMostSuitableMonToSwitchInto(void)
     return bestMonId;
 }
 
-static u8 GetAI_ItemType(u8 itemId, const u8 *itemEffect) // NOTE: should take u16 as item Id argument
+static u8 GetAI_ItemType(u8 itemId, const u16 *itemEffect) // NOTE: should take u16 as item Id argument
 {
     if (itemId == ITEM_FULL_RESTORE)
         return AI_ITEM_FULL_RESTORE;
@@ -833,7 +833,7 @@ static bool8 ShouldUseItem(void)
     for (i = 0; i < MAX_TRAINER_ITEMS; i++)
     {
         u16 item;
-        const u8 *itemEffects;
+        const u16 *itemEffects;
         u8 paramOffset;
         u8 battlerSide;
 

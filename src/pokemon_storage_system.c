@@ -51,9 +51,9 @@
 
 // PC main menu options
 enum {
+    OPTION_MOVE_MONS,
     OPTION_WITHDRAW,
     OPTION_DEPOSIT,
-    OPTION_MOVE_MONS,
     OPTION_MOVE_ITEMS,
     OPTION_EXIT,
     OPTIONS_COUNT
@@ -109,9 +109,9 @@ enum {
 // IDs for menu selection items. See SetMenuText, HandleMenuInput, etc
 enum {
     MENU_CANCEL,
+    MENU_MOVE,
     MENU_STORE,
     MENU_WITHDRAW,
-    MENU_MOVE,
     MENU_SHIFT,
     MENU_PLACE,
     MENU_SUMMARY,
@@ -7932,9 +7932,9 @@ static void InitMenu(void)
 static const u8 *const sMenuTexts[] =
 {
     [MENU_CANCEL]     = gPCText_Cancel,
+    [MENU_MOVE]       = gPCText_Move,
     [MENU_STORE]      = gPCText_Store,
     [MENU_WITHDRAW]   = gPCText_Withdraw,
-    [MENU_MOVE]       = gPCText_Move,
     [MENU_SHIFT]      = gPCText_Shift,
     [MENU_PLACE]      = gPCText_Place,
     [MENU_SUMMARY]    = gPCText_Summary,

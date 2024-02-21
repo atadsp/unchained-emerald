@@ -542,6 +542,39 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
+        .SURF = TRUE,
+        .FLY = TRUE,
+    } },
+
+    [SPECIES_PIKACHU_PARTNER] = { .learnset = {
+        .FOCUS_PUNCH = TRUE,
+        .TOXIC = TRUE,
+        .HIDDEN_POWER = TRUE,
+        .LIGHT_SCREEN = TRUE,
+        .PROTECT = TRUE,
+        .RAIN_DANCE = TRUE,
+        .FRUSTRATION = TRUE,
+        .IRON_TAIL = TRUE,
+        .THUNDERBOLT = TRUE,
+        .THUNDER = TRUE,
+        .RETURN = TRUE,
+        .DIG = TRUE,
+        .DOUBLE_TEAM = TRUE,
+        .SHOCK_WAVE = TRUE,
+        .FACADE = TRUE,
+        .SECRET_POWER = TRUE,
+        .REST = TRUE,
+        .ATTRACT = TRUE,
+        .STRENGTH = TRUE,
+        .FLASH = TRUE,
+        .ROCK_SMASH = TRUE,
+        .SURF = TRUE,
+        .FLY = TRUE,
+        .BRICK_BREAK = TRUE,
+        .DIVE = TRUE,
+        .WATERFALL = TRUE,
+        .HYPER_BEAM = TRUE,
+        .THIEF = TRUE,
     } },
 
     [SPECIES_RAICHU] = { .learnset = {
@@ -3393,6 +3426,32 @@ const union {
         .ATTRACT = TRUE,
     } },
 
+    [SPECIES_EEVEE_PARTNER] = { .learnset = {
+        .TOXIC = TRUE,
+        .HIDDEN_POWER = TRUE,
+        .SUNNY_DAY = TRUE,
+        .PROTECT = TRUE,
+        .RAIN_DANCE = TRUE,
+        .FRUSTRATION = TRUE,
+        .IRON_TAIL = TRUE,
+        .RETURN = TRUE,
+        .DIG = TRUE,
+        .SHADOW_BALL = TRUE,
+        .DOUBLE_TEAM = TRUE,
+        .FACADE = TRUE,
+        .SECRET_POWER = TRUE,
+        .REST = TRUE,
+        .ATTRACT = TRUE,
+        .STRENGTH = TRUE,
+        .WATERFALL = TRUE,
+        .CUT = TRUE,
+        .FLASH = TRUE, 
+        .FLY = TRUE,
+        .DIVE = TRUE,
+        .ROCK_SMASH = TRUE,
+        .SURF = TRUE,
+    } },
+
     [SPECIES_VAPOREON] = { .learnset = {
         .WATER_PULSE = TRUE,
         .ROAR = TRUE,
@@ -5223,6 +5282,11 @@ const union {
     } },
 
     [SPECIES_UNOWN] = { .learnset = {
+        .SECRET_POWER = TRUE,
+        .CALM_MIND = TRUE,
+        .PROTECT = TRUE,
+        .REFLECT = TRUE,
+        .LIGHT_SCREEN = TRUE,
     } },
 
     [SPECIES_WOBBUFFET] = { .learnset = {
@@ -6664,6 +6728,7 @@ const union {
     } },
 
     [SPECIES_GROVYLE] = { .learnset = {
+        .DRAGON_CLAW = TRUE,
         .FOCUS_PUNCH = TRUE,
         .TOXIC = TRUE,
         .BULLET_SEED = TRUE,

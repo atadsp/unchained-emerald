@@ -89,5 +89,7 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
+bool8 GetPlayerEnforcedLevelCap(void);
+u16 GetCurrentLevelCap(void);
 
 #endif // GUARD_PARTY_MENU_H

@@ -518,6 +518,8 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(JIRACHI),
     SPECIES_TO_HOENN(DEOXYS),
     SPECIES_TO_HOENN(CHIMECHO),
+    [SPECIES_PIKACHU_PARTNER - 1] = HOENN_DEX_PIKACHU,
+    [SPECIES_EEVEE_PARTNER - 1] = HOENN_DEX_EEVEE,
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -934,6 +936,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(JIRACHI),
     SPECIES_TO_NATIONAL(DEOXYS),
     SPECIES_TO_NATIONAL(CHIMECHO),
+    [SPECIES_PIKACHU_PARTNER - 1] = NATIONAL_DEX_PIKACHU,
+    [SPECIES_EEVEE_PARTNER - 1] = NATIONAL_DEX_EEVEE,
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1429,6 +1433,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_EKANS - 1]       = ANIM_H_STRETCH,
     [SPECIES_ARBOK - 1]       = ANIM_V_STRETCH,
     [SPECIES_PIKACHU - 1]     = ANIM_FLASH_YELLOW,
+    [SPECIES_PIKACHU_PARTNER - 1]     = ANIM_FLASH_YELLOW,
     [SPECIES_RAICHU - 1]      = ANIM_V_STRETCH,
     [SPECIES_SANDSHREW - 1]   = ANIM_SWING_CONCAVE_FAST_SHORT,
     [SPECIES_SANDSLASH - 1]   = ANIM_V_STRETCH,
@@ -1537,6 +1542,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_LAPRAS - 1]      = ANIM_V_STRETCH,
     [SPECIES_DITTO - 1]       = ANIM_CIRCULAR_STRETCH_TWICE,
     [SPECIES_EEVEE - 1]       = ANIM_V_STRETCH,
+    [SPECIES_EEVEE_PARTNER - 1]       = ANIM_V_STRETCH,
     [SPECIES_VAPOREON - 1]    = ANIM_V_STRETCH,
     [SPECIES_JOLTEON - 1]     = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_FLAREON - 1]     = ANIM_V_STRETCH,
@@ -2094,13 +2100,13 @@ static const s8 sFriendshipEventModifiers[][3] =
 {
     [FRIENDSHIP_EVENT_GROW_LEVEL]      = { 5,  3,  2},
     [FRIENDSHIP_EVENT_VITAMIN]         = { 5,  3,  2},
-    [FRIENDSHIP_EVENT_BATTLE_ITEM]     = { 1,  1,  0},
+    [FRIENDSHIP_EVENT_BATTLE_ITEM]     = { 3,  2,  1},
     [FRIENDSHIP_EVENT_LEAGUE_BATTLE]   = { 3,  2,  1},
-    [FRIENDSHIP_EVENT_LEARN_TMHM]      = { 1,  1,  0},
-    [FRIENDSHIP_EVENT_WALKING]         = { 1,  1,  1},
+    [FRIENDSHIP_EVENT_LEARN_TMHM]      = { 3,  2,  1},
+    [FRIENDSHIP_EVENT_WALKING]         = { 3,  2,  1},
     [FRIENDSHIP_EVENT_FAINT_SMALL]     = {-1, -1, -1},
-    [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-5, -5, -10},
-    [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-5, -5, -10},
+    [FRIENDSHIP_EVENT_FAINT_FIELD_PSN] = {-2, -4, -8},
+    [FRIENDSHIP_EVENT_FAINT_LARGE]     = {-2, -4, -8},
 };
 
 #define HM_MOVES_END 0xFFFF
@@ -2821,13 +2827,13 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
     return checksum;
 }
 
-#define CALC_STAT(base, iv, ev, statIndex, field)               \
-{                                                               \
-    u8 baseStat = gSpeciesInfo[species].base;                   \
-    s32 n = (((2 * baseStat + iv + ev / 4) * level) / 100) + 5; \
-    u8 nature = GetNature(mon);                                 \
-    n = ModifyStatByNature(nature, n, statIndex);               \
-    SetMonData(mon, field, &n);                                 \
+#define CALC_STAT(base, iv, ev, statIndex, field)                                          \
+{                                                                                          \
+    u8 baseStat = gSpeciesInfo[species].base;                                              \
+    s32 n = (((2 * baseStat + iv + (Sqrt(ev)/4)) * level) / 100) + 5;                      \
+    u8 nature = GetNature(mon);                                                            \
+    n = ModifyStatByNature(nature, n, statIndex);                                          \
+    SetMonData(mon, field, &n);                                                            \
 }
 
 void CalculateMonStats(struct Pokemon *mon)
@@ -2859,7 +2865,7 @@ void CalculateMonStats(struct Pokemon *mon)
     else
     {
         s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
-        newMaxHP = (((n + hpEV / 4) * level) / 100) + level + 10;
+        newMaxHP = (((n + (Sqrt(hpEV)/4)) * level) / 100) + 10;
     }
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;
@@ -3201,9 +3207,11 @@ s32 CalculateBaseDamage(struct BattlePokemon *attacker, struct BattlePokemon *de
         spAttack *= 2;
     if (defenderHoldEffect == HOLD_EFFECT_DEEP_SEA_SCALE && defender->species == SPECIES_CLAMPERL)
         spDefense *= 2;
-    if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && attacker->species == SPECIES_PIKACHU)
+    if (attackerHoldEffect == HOLD_EFFECT_LIGHT_BALL && (attacker->species == SPECIES_PIKACHU_PARTNER || attacker->species == SPECIES_PIKACHU))
+    {
         spAttack *= 2;
         attack *= 2;
+    }
     if (defenderHoldEffect == HOLD_EFFECT_METAL_POWDER && defender->species == SPECIES_DITTO)
         defense *= 2;
     if (attackerHoldEffect == HOLD_EFFECT_THICK_CLUB && (attacker->species == SPECIES_CUBONE || attacker->species == SPECIES_MAROWAK))
@@ -4749,7 +4757,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     s32 friendship;
     s32 i;
     bool8 retVal = TRUE;
-    const u8 *itemEffect;
+    const u16 *itemEffect;
     u8 itemEffectParam = ITEM_EFFECT_ARG_START;
     u32 temp1, temp2;
     s8 friendshipChange = 0;
@@ -5313,8 +5321,8 @@ bool8 HealStatusConditions(struct Pokemon *mon, u32 battlePartyId, u32 healMask,
 
 u8 GetItemEffectParamOffset(u16 itemId, u8 effectByte, u8 effectBit)
 {
-    const u8 *temp;
-    const u8 *itemEffect;
+    const u16 *temp;
+    const u16 *itemEffect;
     u8 offset;
     int i;
     u8 j;
@@ -5436,7 +5444,7 @@ static void BufferStatRoseMessage(s32 statIdx)
 u8 *UseStatIncreaseItem(u16 itemId)
 {
     int i;
-    const u8 *itemEffect;
+    const u16 *itemEffect;
 
     if (itemId == ITEM_ENIGMA_BERRY)
     {
@@ -5943,7 +5951,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
         {
             s8 mod = sFriendshipEventModifiers[event][friendshipLevel];
             if (mod > 0 && holdEffect == HOLD_EFFECT_FRIENDSHIP_UP)
-                mod = (150 * mod) / 100;
+                mod = (200 * mod) / 100;
             friendship += mod;
             if (mod > 0)
             {
@@ -5989,22 +5997,22 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         switch (i)
         {
         case STAT_HP:
-            evIncrease = gSpeciesInfo[defeatedSpecies].evYield_HP * multiplier;
+            evIncrease = gSpeciesInfo[defeatedSpecies].baseHP * multiplier;
             break;
         case STAT_ATK:
-            evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Attack * multiplier;
+            evIncrease = gSpeciesInfo[defeatedSpecies].baseAttack * multiplier;
             break;
         case STAT_DEF:
-            evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Defense * multiplier;
+            evIncrease = gSpeciesInfo[defeatedSpecies].baseDefense * multiplier;
             break;
         case STAT_SPEED:
-            evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Speed * multiplier;
+            evIncrease = gSpeciesInfo[defeatedSpecies].baseSpeed * multiplier;
             break;
         case STAT_SPATK:
-            evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpAttack * multiplier;
+            evIncrease = gSpeciesInfo[defeatedSpecies].baseSpAttack * multiplier;
             break;
         case STAT_SPDEF:
-            evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpDefense * multiplier;
+            evIncrease = gSpeciesInfo[defeatedSpecies].baseSpDefense * multiplier;
             break;
         }
 

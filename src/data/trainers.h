@@ -5715,14 +5715,14 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_IRENE] =
     {
-        .trainerClass = TRAINER_CLASS_PICNICKER,
+        .trainerClass = TRAINER_CLASS_ACE,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_GIRL,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .trainerName = _("IRENE"),
+        .trainerName = _("Jolyne"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE,
-        .party = ITEM_DEFAULT_MOVES(sParty_Irene),
+        .party = ITEM_CUSTOM_MOVES(sParty_Irene),
     },
 
     [TRAINER_DIANA_2] =

@@ -70,6 +70,7 @@ static void Task_UseRepel(u8);
 static void Task_CloseCantUseKeyItemMessage(u8);
 static void SetDistanceOfClosestHiddenItem(u8, s16, s16);
 static void CB2_OpenPokeblockFromBag(void);
+static bool8 GetAllowedBattleItems(void);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -981,22 +982,34 @@ static void Task_UseStatIncreaseItem(u8 taskId)
     }
 }
 
+bool8 GetAllowedBattleItems (void)
+{
+    return gSaveBlock2Ptr->optionsAllowBattleItems;
+}
+
 // e.g. X Attack, Guard Spec
 void ItemUseInBattle_StatIncrease(u8 taskId)
 {
     u16 partyId = gBattlerPartyIndexes[gBattlerInMenuId];
 
-    if (ExecuteTableBasedItemEffect(&gPlayerParty[partyId], gSpecialVar_ItemId, partyId, 0) != FALSE)
+    if(GetAllowedBattleItems() == FALSE)
     {
-        if (!InBattlePyramid())
-            DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
-        else
-            DisplayItemMessageInBattlePyramid(taskId, gText_WontHaveEffect, Task_CloseBattlePyramidBagMessage);
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
     }
     else
     {
-        gTasks[taskId].func = Task_UseStatIncreaseItem;
-        gTasks[taskId].data[8] = 0;
+        if (ExecuteTableBasedItemEffect(&gPlayerParty[partyId], gSpecialVar_ItemId, partyId, 0) != FALSE)
+        {
+            if (!InBattlePyramid())
+                DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+            else
+                DisplayItemMessageInBattlePyramid(taskId, gText_WontHaveEffect, Task_CloseBattlePyramidBagMessage);
+        }
+        else
+        {
+            gTasks[taskId].func = Task_UseStatIncreaseItem;
+            gTasks[taskId].data[8] = 0;
+        }
     }
 }
 
@@ -1016,21 +1029,39 @@ static void ItemUseInBattle_ShowPartyMenu(u8 taskId)
 
 void ItemUseInBattle_Medicine(u8 taskId)
 {
-    gItemUseCB = ItemUseCB_Medicine;
-    ItemUseInBattle_ShowPartyMenu(taskId);
+    if(GetAllowedBattleItems() == FALSE){
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+    }
+    else
+    {
+        gItemUseCB = ItemUseCB_Medicine;
+        ItemUseInBattle_ShowPartyMenu(taskId);
+    }
 }
 
 // Unused. Sacred Ash cannot be used in battle
 void ItemUseInBattle_SacredAsh(u8 taskId)
 {
-    gItemUseCB = ItemUseCB_SacredAsh;
-    ItemUseInBattle_ShowPartyMenu(taskId);
+    if(GetAllowedBattleItems() == FALSE){
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+    }
+    else
+    {
+        gItemUseCB = ItemUseCB_SacredAsh;
+        ItemUseInBattle_ShowPartyMenu(taskId); 
+    }
 }
 
 void ItemUseInBattle_PPRecovery(u8 taskId)
 {
-    gItemUseCB = ItemUseCB_PPRecovery;
-    ItemUseInBattle_ShowPartyMenu(taskId);
+    if(GetAllowedBattleItems() == FALSE){
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+    }
+    else
+    {
+        gItemUseCB = ItemUseCB_PPRecovery;
+        ItemUseInBattle_ShowPartyMenu(taskId);   
+    }
 }
 
 // Fluffy Tail / Poke Doll
@@ -1097,28 +1128,34 @@ void ItemUseOutOfBattle_EnigmaBerry(u8 taskId)
 
 void ItemUseInBattle_EnigmaBerry(u8 taskId)
 {
-    switch (GetItemEffectType(gSpecialVar_ItemId))
+    if(GetAllowedBattleItems() == FALSE){
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_WontHaveEffect, CloseItemMessage);
+    }
+    else
     {
-    case ITEM_EFFECT_X_ITEM:
-        ItemUseInBattle_StatIncrease(taskId);
-        break;
-    case ITEM_EFFECT_HEAL_HP:
-    case ITEM_EFFECT_CURE_POISON:
-    case ITEM_EFFECT_CURE_SLEEP:
-    case ITEM_EFFECT_CURE_BURN:
-    case ITEM_EFFECT_CURE_FREEZE:
-    case ITEM_EFFECT_CURE_PARALYSIS:
-    case ITEM_EFFECT_CURE_ALL_STATUS:
-    case ITEM_EFFECT_CURE_CONFUSION:
-    case ITEM_EFFECT_CURE_INFATUATION:
-        ItemUseInBattle_Medicine(taskId);
-        break;
-    case ITEM_EFFECT_HEAL_PP:
-        ItemUseInBattle_PPRecovery(taskId);
-        break;
-    default:
-        ItemUseOutOfBattle_CannotUse(taskId);
-        break;
+        switch (GetItemEffectType(gSpecialVar_ItemId))
+        {
+        case ITEM_EFFECT_X_ITEM:
+            ItemUseInBattle_StatIncrease(taskId);
+            break;
+        case ITEM_EFFECT_HEAL_HP:
+        case ITEM_EFFECT_CURE_POISON:
+        case ITEM_EFFECT_CURE_SLEEP:
+        case ITEM_EFFECT_CURE_BURN:
+        case ITEM_EFFECT_CURE_FREEZE:
+        case ITEM_EFFECT_CURE_PARALYSIS:
+        case ITEM_EFFECT_CURE_ALL_STATUS:
+        case ITEM_EFFECT_CURE_CONFUSION:
+        case ITEM_EFFECT_CURE_INFATUATION:
+            ItemUseInBattle_Medicine(taskId);
+            break;
+        case ITEM_EFFECT_HEAL_PP:
+            ItemUseInBattle_PPRecovery(taskId);
+            break;
+        default:
+            ItemUseOutOfBattle_CannotUse(taskId);
+            break;
+        }
     }
 }
 
