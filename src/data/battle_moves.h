@@ -2382,7 +2382,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_MACH_PUNCH] =
     {
         .effect = EFFECT_QUICK_ATTACK,
-        .power = 50,
+        .power = 40,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
         .pp = 30,
@@ -2551,9 +2551,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     [MOVE_ICY_WIND] =
     {
         .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 65,
+        .power = 55,
         .type = TYPE_ICE,
-        .accuracy = 100,
+        .accuracy = 95,
         .pp = 15,
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_BOTH,

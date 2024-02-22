@@ -4981,7 +4981,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     bool8 cannotUseEffect;
     u32 monLevel = GetMonData(mon, MON_DATA_LEVEL);
     
-    if (monLevel >= MAX_LEVEL || (GetPlayerEnforcedLevelCap() == 1 && monLevel > GetCurrentLevelCap()))
+    if (monLevel >= MAX_LEVEL || (GetPlayerEnforcedLevelCap() == 1 && monLevel >= GetCurrentLevelCap()))
     {
         cannotUseEffect = TRUE;
     }

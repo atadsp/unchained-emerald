@@ -5976,7 +5976,8 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
     u16 totalEVs = 0;
     u16 heldItem;
     u8 holdEffect;
-    int i, multiplier;
+    int i;
+    int multiplier = 1;
 
     for (i = 0; i < NUM_STATS; i++)
     {
@@ -5990,9 +5991,13 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
             break;
 
         if (CheckPartyHasHadPokerus(mon, 0))
-            multiplier = 2;
-        else
-            multiplier = 1;
+            multiplier += 1;
+
+        if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
+            multiplier += 1;
+    
+        if (CheckPartyHasHadPokerus(mon, 0) && holdEffect == HOLD_EFFECT_MACHO_BRACE)
+            multiplier += 1;
 
         switch (i)
         {
@@ -6028,9 +6033,6 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         {
             holdEffect = ItemId_GetHoldEffect(heldItem);
         }
-
-        if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
-            evIncrease *= 2;
 
         if (totalEVs + (s16)evIncrease > MAX_TOTAL_EVS)
             evIncrease = ((s16)evIncrease + MAX_TOTAL_EVS) - (totalEVs + evIncrease);
