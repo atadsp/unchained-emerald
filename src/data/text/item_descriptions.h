@@ -1371,7 +1371,7 @@ static const u8 sTM50Desc[] = _(
 static const u8 sHM01Desc[] = _(
     "Attacks the foe\n"
     "with sharp blades\n"
-    "or claws.");
+    "High crit rate.");
 
 static const u8 sHM02Desc[] = _(
     "Flies up on the\n"

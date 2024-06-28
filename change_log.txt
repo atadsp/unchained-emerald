@@ -2,11 +2,11 @@ Change log:
 
 New Evolution Methods: 
 Poliwhirl -> Politoed = use Kings Rock on Poliwhirl 
-Kadabara -> Alakazam = Level to 37
+Kadabara -> Alakazam = Level to 45
 Machop -> Machoke = Level to 37
 Graveler -> Golem = Level to 37
 Slowpoke -> Slowking = use Kings Rock on Slowpoke 
-Haunter -> Gengar = Level to 37
+Haunter -> Gengar = Level to 45
 Onix -> Steelix = Use Metal Coat on Onix 
 Seadra -> Kingdra = Use Dragon Scale on Seadra
 Scyther -> Scizor = Use Metal Coat on Scyther 
@@ -134,382 +134,18 @@ Pokemon Changes:
 			Iron Hands
 			Iron Thorns
 			Roaring Moon
-			Iron Valiant
+			Iron Valinat
 			Walking Wake
-
-Venusaur:
-	HP: 80 -> 90
-Charizard:
-	Type Change: Fire / Dragon
-	Special Attack: 109->110
-Blastoise: 
-	Type Change: Water / Steel
-	HP: 79 -> 84
-Butterfree:
-	Special Attack: 80 -> 90
-Beedrill: 
-	Attack: 80 -> 90
-Arbok:
-	Attack: 85 -> 95
-Pikachu: 
-	Defense: 30 -> 40
-	Special Defense: 40 -> 50
-	Speed: 90 -> 100
-Raichu:
-	Defense: 55 -> 65
-	Special Defense: 80 -> 90
-	Speed: 100 -> 110
-Sandshrew: 
-	Special Attack: 20 -> 30
-Sandslash: 
-	Special Attack: 45 -> 55
-Nidoqueen:
-	Attack: 82 -> 92
-Nidoking:
-	Attack: 92 -> 102
-Clefable:
-	Special Attack: 85 -> 95
-Vulpix: 
-	Special Attack: 50 -> 65
-Ninetails:
-	Type Change: Fire / Psychic 
-	Special Attack: 81 -> 100
-Wigglytuff:
-	Special Attack: 75 -> 85
-Zubat: 
-	Special Attack: 30 -> 40
-Golbat:
-	Special Attack: 65 -> 75
-Oddish: 
-	Special Defense: 65 -> 75
-Gloom:
-	Special Defense: 75 -> 85
-Vileplume:
-	Special Attack: 100 -> 110
-	Special Defense: 90 -> 100
-Paras:
-	Special Attack: 45 -> 55
-Parasect:
-	Special Attack: 60 -> 70
-Venomoth:
-	Special Defense: 75 -> 90
-Diglett:
-	Special Attack: 35 -> 45
-Dugtrio:
-	Attack: 80 -> 100
-	Special Attack: 50 -> 70
-Psyduck: 
-	Type Changed: Water / Psychic 
-Golduck:
-	Type Changed: Water / Psychic 
-Poliwrath:
-	Attack: 85 -> 95
-Abra:
-	Special Defense: 55 -> 105
-Kadabra: 
-	Special Defense: 70 -> 120
-Alakazam:
-	Special Defense: 85 -> 135
-Bellsprout: 
-	Special Defense: 30 -> 70
-Weepinbell:
-	Special Defense: 45 -> 85
-Victreebel:
-	Special Defense: 60 -> 100
-Tentacool:
-	Special Attack: 50 -> 100
-Tentacruel:
-	Special Attack: 80 -> 120
-Golem:
-	Attack: 110 -> 120
-Magnemite: 
-	Special Defense: 45 -> 95
-Magneton: 
-	Special Defense: 70 -> 120
-Farfetch'd:
-	Attack: 65 -> 90
-Dodrio:
-	Speed: 100 -> 110
-Seel:
-	Special Attack: 45 -> 70
-Dewgong: 
-	Special Attack: 70 -> 95
-Shellder:
-	Special Defense: 25 -> 45
-Cloyster:
-	Special Defense: 45 -> 85
-Ghastly: 
-	Special Defense: 35 -> 100
-Haunter: 
-	Special Defense: 55 -> 110
-Gengar: 
-	Special Defense: 75 -> 130
-Drowzee:
-	Special Attack: 43 -> 90
-Hypno:
-	Special Attack: 73 -> 115
-Electrode: 
-	Speed: 140 -> 150
-Exeggcute:
-	Special Defense: 45 -> 60
-Exeggutor: 
-	Special Defense: 65 -> 125
-Marowak: 
-	Type Change: Ground / Ghost
-Koffing: 
-	Special Defense: 45 -> 60
-Weezing:
-	Special Defense: 70 -> 85
-Chansey:
-	Special Attack: 35 -> 105
-Tangela:
-	Special Defense: 40 -> 100
-Horsea:
-	Special Defense: 25 -> 70
-Seadra: 
-	Special Defense: 45 -> 95
-Goldeen Goldeen Goldeen:
-	Special Attack: 35 -> 50
-Seaking: 
-	Special Attack: 65 -> 80
-Staryu:
-	Special Defense: 55 -> 70
-Starmie:
-	Special Defense: 85 -> 100
-Tauros:
-	Special Attack: 40 -> 70
-Magikarp:
-	Special Attack: 15 -> 20
-Gyarados: 
-	Special Attack: 60 -> 100
-Lapras:
-	Special Attack: 85 -> 95
-Eevee:
-	Special Attack: 45 -> 65
-Vaporeon:
-	Special Defense: 95 -> 110
-Jolteon:
-	Special Defense: 95 -> 110
-Flareon:
-	Special Attack: 95 -> 110
-Omanyte: 
-	Special Defense: 45 -> 90
-Omastar: 
-	Special Defense: 70 -> 115
-Kabutops:
-	Special Attack: 65 -> 110
-Aerodactyl:
-	HP: 80 -> 100
-	Attack: 105 -> 110
-	Special Attack: 65 -> 75 
-Articuno:
-	Attack: 85 -> 90
-	Special Attack: 95 -> 125
-	Speed: 85 -> 90
-Zapdos: 
-	Defense: 85 -> 90
-	Special Defense: 90 -> 125
-Moltres:
-	Special Defense: 80 -> 125
-Mewtwo:
-	Special Defense: 90 -> 154
-Mew:
-	Type Change: Psychic / Fairy
-	All Stats: 100 -> 110
-Meganium:
-	Special Attack: 83 -> 93
-Typhlosion:
-	Special Attack: 109 -> 110
-Feraligatr:
-	Special Attack: 79 -> 84
-Noctowl:
-	Special Attack: 76 -> 86
-Ariados:
-	Special Defense: 60 -> 70
-Crobat: 
-	Special Attack: 70 -> 80
-Pichu: 
-	Defense: 15 -> 25
-	Speed: 60 -> 70
-Ampharos:
-	Type Change: Electric / Dragon
-	Defense: 75 -> 85
-Bellosom:
-	Defense: 85 -> 95
-	Special Attack: 90 -> 100
-Azumarill:
-	Special Attack: 50 -> 60
-Jumpluff:
-	Special Defense: 85 -> 95
-Yanma: 
-	Speed: 95 -> 100 
-Espeon:
-	Special Defense: 95 -> 110
-Umbreon:
-	HP: 95 -> 110
-Quillfish:
-	Defense: 75 -> 85
-Sneasel:
-	Special Attack: 35 -> 95
-Macargo: 
-	HP: 50 -> 60
-	Speical Attack: 80 -> 90
-Corsola:
-	HP: 55 -> 65
-	Defense: 85 -> 95
-	Special Defense: 85 -> 95
-Mantine:
-	HP: 65 -> 85
-Kingdra: 
-	Special Defense: 95 -> 110
-Blissey: 
-	Special Attack: 75 -> 115
-Raikou:
-	Defense: 75 -> 90
-	Special Attack: 115 -> 125
-	Special Defense: 100 -> 105
-	Speed: 115 -> 125
-Entei:
-	Defense: 85 -> 95
-	Special Attack: 90 -> 115
-	Special Deense: 75 -> 80
-Suicune: 
-	HP: 100 -> 120
-	Defense: 115 -> 120
-	Special Attack: 90 -> 100
-	Special Defense: 115 -> 120
-Lugia:
-	Type Change: Water / Flying
-	HP: 106 -> 120
-	Attack: 90 -> 105
-	Special Attack: 90 -> 105
-	Special Defense: 154 -> 174
-Ho-oh:
-	HP: 106 -> 120
-	Defense: 90 -> 105 
-	Special Defense: 154 -> 174
-	Speed: 90 -> 105
-Celebi:
-	Type Change: Fairy / Grass
-	All Stats: 100 -> 110
-Sceptile:
-	Type Change: Grass / Dragon
-	HP: 70 -> 71
-	Defense: 65 -> 69
-Blaziken:
-	Defense: 70 -> 72
-	Special Defense: 70 -> 72
-	Speed: 80 -> 81
-Beautifly:
-	Speical Attack: 90 -> 100
-Dustox:
-	Attack: 50 -> 60
-Dustox:
-	Speical Defense: 90 -> 100
-Swellow:
-	Special Attack: 50 -> 75
-Pelipper:
-	Special Attack: 85 -> 95
-Masquerain:
-	Type Change: Bug / Water
-Shedinja:
-	Defense: 45 -> 1
-	Special Attack: 30 -> 90
-	Special Defense: 30 -> 1
-	Speed: 40 -> 90
-Exploud:
-	Special Defense: 64 -> 73
-Delcatty:
-	Type Change: Normal / Fairy
-	Speed: 70 -> 90
-Aggron:
-	HP: 70 -> 95
-Volbeat:
-	Type Change: Bug / Electric
-	Defense: 55 -> 75
-	Special Defense: 75 -> 85
-Illumise:
-	Type Change: Bug / Psychic
-	Defense: 55 -> 75
-	Special Defense: 75 -> 85
-Grumpig:
-	Type Change: Psychic / Dark
-Spinda:
-	Type ChangeL Normal / Fighting
-	All Stats: 60 -> 69
-Trapinch:
-	Type Change: Bug / Ground
-Vibrava:
-	Type Change: Bug / Dragon
-Flygon:
-	Type Change: Bug / Dragon
-	All Stats: +5
-Lunatone:
-	HP: 70 -> 90
-Solrock:
-	HP: 70 -> 90
-Cradily:
-	HP: 86 -> 110
-	Attack: 81 -> 83
-	Defense: 97 -> 110
-	Special Attack: 81 -> 83 
-	Special Defense: 107 -> 110
-	Speed: 43 -> 44
-Armaldo:
-	HP: 75 -> 95
-	Attack: 125 -> 135
-	Defense: 100 -> 110
-	Special Attack: 70 -> 75
-Kecleon:
-	Type Change: Normal / Ghost
-Chimecho:
-	HP: 65 -> 75
-	Defense: 70 -> 80
-	Special Defense: 80 -> 90
-Absol:
-	Speed: 75 -> 90
-Regirock:
-	HP: 80 -> 120
-Regice:
-	HP: 80 -> 120
-Registeel:
-	HP: 80 -> 120
-Latias:
-	Special Defense: 130 -> 150
-Latios: 
-	Special Attack: 130 -> 150
-Kyogre:
-	Attack: 100 -> 135
-	Special Attack: 150 -> 165
-	Special Defense: 140 -> 150
-Groudon:
-	Attack: 150 -> 165
-	Defense: 140 -> 150
-	Special Attack: 100 -> 135
-Rayquaza:
-	Attack: 150 -> 165
-	Defense: 90 -> 100
-	Special Attack: 150 -> 165
-	Special Defense: 90 -> 100
-	Speed: 95 -> 109
-Jirachi:
-	Type Change: Steel / Fairy 
-	All Stats: 100 -> 110
-Deoxys (Normal):
-	HP: 50 -> 60
-	Attack: 150 -> 160
-	Defense: 50 -> 60
-	Special Attack: 150 -> 160
-	Special Defense: 50 -> 60
-	Speed: 150 -> 160
+			Gouging Fire
+			Raging Bolt
 
 Move Changes: 
 	HMs can be forgotten without the Move Deleter
-	Added the following as Fairy Type Moves: (Not tested yet)
+	Added the following as Fairy Type Moves: (No animations)
 		Moonblast
-		Disarming Voice (Fairy Kiss)
+		Fairy Voice (Disarming Voice)
 		Fleur Cannon
-		Draining Kiss (Drain Kiss)
+		Drain Kiss (Draining Kiss)
 	Following changes to existing moves: 
 		Made CHARM Fairy type
 		Made Moonlight Fairy Type
@@ -630,7 +266,6 @@ Trainer Changes:
 Item changes: 
 	All of the confuse berries have been increased to 1/3 of the user's max HP
 	Sitrus berry have been increased to restore 1/4 of the user's max HP 
-	TMs should have infinite use
 	All repels now block encounters for 255 steps (so only buy base repels)
 	Light Ball now works like how it does in later gens (boosting Pikachu's attack and special attack)
 	"Usless" Field Items have been replaced including:
@@ -661,9 +296,8 @@ Other Changes:
 	Always running unless you hold B
 	You no longer need to have a pokemon that knows a field move to use it (still need appropriate gym badges)
 		Move that you use from a menu still must be taught like Fly and Flash
-	EVs cap at 252 instead of 255
-	All EVs can be maxed to 252 like in generation 1 and 2
-	Vitamins can be used to max out EVs like in later gens
+	EVs replaced by Stat Experience
+	Vitamins can be used to max out Stat Experience
 	Shiny Odds increased from 1/8192 to 1/1024
 	You now buy coins in increments of 500 for 1,000 and 5,000 for 10,000 (10x more coin per $$) 
 
@@ -672,3 +306,7 @@ Current Know Issues:
 		None that I know of
 	Medium Priority:
 		No Animations for new Fairy type moves (Moves still work as expected)
+
+Special Thanks to: 
+For the Poekmon Emerald Decompilation: https://github.com/pret/pokeemerald
+For the new pokemon sprites: https://github.com/rh-hideout/pokeemerald-expansion 

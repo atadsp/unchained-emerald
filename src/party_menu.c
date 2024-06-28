@@ -4293,7 +4293,7 @@ static void Task_SetSacredAshCB(u8 taskId)
 
 static bool8 IsHPRecoveryItem(u16 item)
 {
-    const u8 *effect;
+    const u16 *effect;
 
     if (item == ITEM_ENIGMA_BERRY)
         effect = gSaveBlock1Ptr->enigmaBerry.itemEffect;
@@ -4609,7 +4609,7 @@ static void Task_HandleWhichMoveInput(u8 taskId)
 
 void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task)
 {
-    const u8 *effect;
+    const u16 *effect;
     u16 item = gSpecialVar_ItemId;
 
     if (item == ITEM_ENIGMA_BERRY)
@@ -4768,6 +4768,8 @@ static void Task_LearnedMove(u8 taskId)
     if (move[1] == 0)
     {
         AdjustFriendship(mon, FRIENDSHIP_EVENT_LEARN_TMHM);
+        if (item < ITEM_HM01)
+            RemoveBagItem(item, 1);
     }
     GetMonNickname(mon, gStringVar1);
     StringCopy(gStringVar2, gMoveNames[move[0]]);
@@ -4941,6 +4943,37 @@ static void Task_TryLearningNextMoveAfterText(u8 taskId)
         Task_TryLearningNextMove(taskId);
 }
 
+
+bool8 GetPlayerEnforcedLevelCap(void)
+{
+    return gSaveBlock2Ptr->optionsEnforceLevelCap;
+}
+
+u16 GetCurrentLevelCap(void)
+{
+    if(FlagGet(FLAG_BADGE01_GET)) {
+        return 24;
+    } else if(FlagGet(FLAG_BADGE02_GET)){
+        return 28;
+    } else if(FlagGet(FLAG_BADGE03_GET)){
+        return 33;
+    } else if(FlagGet(FLAG_BADGE04_GET)){
+        return 37;
+    } else if(FlagGet(FLAG_BADGE05_GET)){
+        return 41;
+    } else if(FlagGet(FLAG_BADGE06_GET)){
+        return 46;
+    } else if(FlagGet(FLAG_BADGE07_GET)){
+        return 50;
+    } else if(FlagGet(FLAG_BADGE08_GET)){
+        return 65;
+    } else if(FlagGet(FLAG_IS_CHAMPION)){
+        return 100;
+    } else {
+        return 17;
+    }
+}
+
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
@@ -4948,16 +4981,17 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     s16 *arrayPtr = ptr->data;
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
-
-    if (GetMonData(mon, MON_DATA_LEVEL) != MAX_LEVEL)
+    u32 monLevel = GetMonData(mon, MON_DATA_LEVEL);
+    
+    if (monLevel >= MAX_LEVEL || (GetPlayerEnforcedLevelCap() == 1 && monLevel >= GetCurrentLevelCap()))
+    {
+        cannotUseEffect = TRUE;
+    }
+    else
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect_(gPartyMenu.slotId, *itemPtr, 0);
         BufferMonStatsToTaskData(mon, &ptr->data[NUM_STATS]);
-    }
-    else
-    {
-        cannotUseEffect = TRUE;
     }
     PlaySE(SE_SELECT);
     if (cannotUseEffect)
@@ -4974,7 +5008,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
         RemoveBagItem(gSpecialVar_ItemId, 1);
         GetMonNickname(mon, gStringVar1);
-        ConvertIntToDecimalStringN(gStringVar2, GetMonData(mon, MON_DATA_LEVEL), STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(gStringVar2, monLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
         StringExpandPlaceholders(gStringVar4, gText_PkmnElevatedToLvVar2);
         DisplayPartyMenuMessage(gStringVar4, TRUE);
         ScheduleBgCopyTilemapToVram(2);
@@ -5238,7 +5272,7 @@ void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc task)
 
 u8 GetItemEffectType(u16 item)
 {
-    const u8 *itemEffect;
+    const u16 *itemEffect;
     u32 statusCure;
 
     if (!ITEM_HAS_EFFECT(item))

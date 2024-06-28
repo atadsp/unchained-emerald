@@ -1338,16 +1338,16 @@ Route111_Text_TravisPostBattle:
 	.string "I can't help looking.$"
 
 Route111_Text_IreneIntro:
-	.string "I don't know where you're going,\n"
-	.string "but would you like to battle?$"
+	.string "You're challenging me to a battle?\n"
+	.string "Yare yare dawa...?$"
 
 Route111_Text_IreneDefeat:
-	.string "Oh, you're disgustingly good!$"
+	.string "I thought Stone Free would help me win.$"
 
 Route111_Text_IrenePostBattle:
-	.string "I'm thinking that I should go to\n"
-	.string "MT. CHIMNEY, but the view around\l"
-	.string "here is very nice, too.$"
+	.string "American style. French style.\n"
+	.string "Japanese style. Italian.\l"
+	.string "Specifically Naples style.$"
 
 Route111_Text_DaisukeIntro:
 	.string "To train myself, I challenge all\n"

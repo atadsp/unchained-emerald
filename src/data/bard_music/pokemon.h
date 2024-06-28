@@ -212,6 +212,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
+    [SPECIES_PIKACHU_PARTNER] = {
+        { .songLengthId = 12 },
+        { .songLengthId = 42 },
+        { .songLengthId = 39 },
+        NULL_BARD_SOUND,
+        NULL_BARD_SOUND,
+        NULL_BARD_SOUND,
+    },
     [SPECIES_RAICHU] = {
         { .songLengthId = 18 },
         { .songLengthId = 39 },
@@ -285,6 +293,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
     },
     [SPECIES_CLEFAIRY] = {
+        { .songLengthId = 9 },
+        { .songLengthId = 11 },
+        { .songLengthId = 12 },
+        NULL_BARD_SOUND,
+        NULL_BARD_SOUND,
+        NULL_BARD_SOUND,
+    },
+    [SPECIES_CLEFAIRY_PARTNER] = {
         { .songLengthId = 9 },
         { .songLengthId = 11 },
         { .songLengthId = 12 },
@@ -1069,6 +1085,14 @@ const struct BardSound gBardSounds_Pokemon[NUM_SPECIES][6] = {
         NULL_BARD_SOUND,
     },
     [SPECIES_EEVEE] = {
+        { .songLengthId = 12 },
+        { .songLengthId = 12 },
+        { .songLengthId = 51 },
+        NULL_BARD_SOUND,
+        NULL_BARD_SOUND,
+        NULL_BARD_SOUND,
+    },
+    [SPECIES_EEVEE_PARTNER] = {
         { .songLengthId = 12 },
         { .songLengthId = 12 },
         { .songLengthId = 51 },

@@ -1329,8 +1329,8 @@ static const u8 sSearchMovementMap_ShiftHoennDex[SEARCH_COUNT][4] =
 
 static const struct SearchOptionText sDexModeOptions[] =
 {
-    [DEX_MODE_HOENN]    = {gText_DexHoennDescription, gText_DexHoennTitle},
     [DEX_MODE_NATIONAL] = {gText_DexNatDescription,   gText_DexNatTitle},
+    [DEX_MODE_HOENN]    = {gText_DexHoennDescription, gText_DexHoennTitle},
     {},
 };
 
@@ -1509,7 +1509,7 @@ void ResetPokedex(void)
     sLastSelectedPokemon = 0;
     sPokeBallRotation = POKEBALL_ROTATION_TOP;
     gUnusedPokedexU8 = 0;
-    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_HOENN;
+    gSaveBlock2Ptr->pokedex.mode = DEX_MODE_NATIONAL;
     gSaveBlock2Ptr->pokedex.order = 0;
     gSaveBlock2Ptr->pokedex.nationalMagic = 0;
     gSaveBlock2Ptr->pokedex.unknown2 = 0;
@@ -2189,10 +2189,6 @@ static void CreatePokedexList(u8 dexMode, u8 order)
     switch (dexMode)
     {
     default:
-    case DEX_MODE_HOENN:
-        temp_dexCount = HOENN_DEX_COUNT;
-        temp_isHoennDex = TRUE;
-        break;
     case DEX_MODE_NATIONAL:
         if (IsNationalPokedexEnabled())
         {
@@ -2204,6 +2200,10 @@ static void CreatePokedexList(u8 dexMode, u8 order)
             temp_dexCount = HOENN_DEX_COUNT;
             temp_isHoennDex = TRUE;
         }
+        break;
+    case DEX_MODE_HOENN:
+        temp_dexCount = HOENN_DEX_COUNT;
+        temp_isHoennDex = TRUE;
         break;
     }
 
@@ -5521,11 +5521,11 @@ static void SetDefaultSearchModeAndOrder(u8 taskId)
     switch (sPokedexView->dexModeBackup)
     {
     default:
-    case DEX_MODE_HOENN:
-        selected = DEX_MODE_HOENN;
-        break;
     case DEX_MODE_NATIONAL:
         selected = DEX_MODE_NATIONAL;
+        break;
+    case DEX_MODE_HOENN:
+        selected = DEX_MODE_HOENN;
         break;
     }
     gTasks[taskId].tCursorPos_Mode = selected;
