@@ -520,6 +520,7 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(CHIMECHO),
     [SPECIES_PIKACHU_PARTNER - 1] = HOENN_DEX_PIKACHU,
     [SPECIES_EEVEE_PARTNER - 1] = HOENN_DEX_EEVEE,
+    [SPECIES_CLEFAIRY_PARTNER - 1] = HOENN_DEX_CLEFAIRY,
 };
 
 // Assigns all species to the National Dex Index (Summary No. for National Dex)
@@ -938,6 +939,7 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(CHIMECHO),
     [SPECIES_PIKACHU_PARTNER - 1] = NATIONAL_DEX_PIKACHU,
     [SPECIES_EEVEE_PARTNER - 1] = NATIONAL_DEX_EEVEE,
+    [SPECIES_CLEFAIRY_PARTNER - 1] = NATIONAL_DEX_CLEFAIRY,
 };
 
 // Assigns all Hoenn Dex Indexes to a National Dex Index
@@ -1444,6 +1446,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_NIDORINO - 1]    = ANIM_SHRINK_GROW,
     [SPECIES_NIDOKING - 1]    = ANIM_H_SHAKE,
     [SPECIES_CLEFAIRY - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
+    [SPECIES_CLEFAIRY_PARTNER - 1]    = ANIM_V_SQUISH_AND_BOUNCE,
     [SPECIES_CLEFABLE - 1]    = ANIM_BOUNCE_ROTATE_TO_SIDES_SMALL_SLOW,
     [SPECIES_VULPIX - 1]      = ANIM_V_STRETCH,
     [SPECIES_NINETALES - 1]   = ANIM_V_SHAKE,
@@ -2830,7 +2833,7 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 #define CALC_STAT(base, iv, ev, statIndex, field)                                          \
 {                                                                                          \
     u8 baseStat = gSpeciesInfo[species].base;                                              \
-    s32 n = (((2 * baseStat + iv + (Sqrt(ev)/4)) * level) / 100) + 5;                      \
+    s32 n = ((((baseStat + iv/2) * 2 + Sqrt(ev) / 4) * level) / 100)  + 5;                 \
     u8 nature = GetNature(mon);                                                            \
     n = ModifyStatByNature(nature, n, statIndex);                                          \
     SetMonData(mon, field, &n);                                                            \
@@ -2864,8 +2867,7 @@ void CalculateMonStats(struct Pokemon *mon)
     }
     else
     {
-        s32 n = 2 * gSpeciesInfo[species].baseHP + hpIV;
-        newMaxHP = (((n + (Sqrt(hpEV)/4)) * level) / 100) + 10;
+        newMaxHP = ((((gSpeciesInfo[species].baseHP + hpIV/2) * 2 + Sqrt(hpEV) / 4) * level) / 100) + level + 10;
     }
 
     gBattleScripting.levelUpHP = newMaxHP - oldMaxHP;

@@ -37,6 +37,7 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_NIDORINO] = gMonFootprint_Nidorino,
     [SPECIES_NIDOKING] = gMonFootprint_Nidoking,
     [SPECIES_CLEFAIRY] = gMonFootprint_Clefairy,
+    [SPECIES_CLEFAIRY_PARTNER] = gMonFootprint_Clefairy,
     [SPECIES_CLEFABLE] = gMonFootprint_Clefable,
     [SPECIES_VULPIX] = gMonFootprint_Vulpix,
     [SPECIES_NINETALES] = gMonFootprint_Ninetales,

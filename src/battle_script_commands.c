@@ -3328,7 +3328,7 @@ static void Cmd_getexp(void)
             {
                 if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
                     continue;
-                if (GetPlayerEnforcedLevelCap() == 1 && GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > GetCurrentLevelCap())
+                if (GetPlayerEnforcedLevelCap() == 1 && GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) >= GetCurrentLevelCap())
                     continue;
                 if (gBitTable[i] & sentIn)
                     viaSentIn++;

@@ -41,6 +41,7 @@ const struct MonCoords gMonBackPicCoords[] =
     [SPECIES_NIDORINO]    = { .size = MON_COORDS_SIZE(64, 48), .y_offset =  9 },
     [SPECIES_NIDOKING]    = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 },
     [SPECIES_CLEFAIRY]    = { .size = MON_COORDS_SIZE(48, 40), .y_offset = 13 },
+    [SPECIES_CLEFAIRY_PARTNER]    = { .size = MON_COORDS_SIZE(48, 40), .y_offset = 13 },
     [SPECIES_CLEFABLE]    = { .size = MON_COORDS_SIZE(56, 48), .y_offset = 10 },
     [SPECIES_VULPIX]      = { .size = MON_COORDS_SIZE(56, 48), .y_offset =  9 },
     [SPECIES_NINETALES]   = { .size = MON_COORDS_SIZE(56, 56), .y_offset =  5 },

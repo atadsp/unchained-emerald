@@ -5291,6 +5291,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_NIDORINO]    = sAnims_Nidorino,
     [SPECIES_NIDOKING]    = sAnims_Nidoking,
     [SPECIES_CLEFAIRY]    = sAnims_Clefairy,
+    [SPECIES_CLEFAIRY_PARTNER]    = sAnims_Clefairy,
     [SPECIES_CLEFABLE]    = sAnims_Clefable,
     [SPECIES_VULPIX]      = sAnims_Vulpix,
     [SPECIES_NINETALES]   = sAnims_Ninetales,

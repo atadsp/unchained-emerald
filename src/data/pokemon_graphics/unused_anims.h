@@ -1417,6 +1417,7 @@ static const union AnimCmd *const *const sUnusedAnimsTable[] =
     [SPECIES_NIDORINO] = sUnusedAnims_Nidorino,
     [SPECIES_NIDOKING] = sUnusedAnims_Nidoking,
     [SPECIES_CLEFAIRY] = sUnusedAnims_Clefairy,
+    [SPECIES_CLEFAIRY_PARTNER] = sUnusedAnims_Clefairy,
     [SPECIES_CLEFABLE] = sUnusedAnims_Clefable,
     [SPECIES_VULPIX] = sUnusedAnims_Vulpix,
     [SPECIES_NINETALES] = sUnusedAnims_Ninetales,

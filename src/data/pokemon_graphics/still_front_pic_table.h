@@ -37,6 +37,7 @@ const struct CompressedSpriteSheet gMonStillFrontPicTable[] =
     SPECIES_SPRITE(NIDORINO,      gMonStillFrontPic_Nidorino),
     SPECIES_SPRITE(NIDOKING,      gMonStillFrontPic_Nidoking),
     SPECIES_SPRITE(CLEFAIRY,      gMonStillFrontPic_Clefairy),
+    SPECIES_SPRITE(CLEFAIRY_PARTNER,      gMonStillFrontPic_Clefairy),
     SPECIES_SPRITE(CLEFABLE,      gMonStillFrontPic_Clefable),
     SPECIES_SPRITE(VULPIX,        gMonStillFrontPic_Vulpix),
     SPECIES_SPRITE(NINETALES,     gMonStillFrontPic_Ninetales),

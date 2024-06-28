@@ -37,6 +37,7 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_NIDORINO] = sNidorinoLevelUpLearnset,
     [SPECIES_NIDOKING] = sNidokingLevelUpLearnset,
     [SPECIES_CLEFAIRY] = sClefairyLevelUpLearnset,
+    [SPECIES_CLEFAIRY_PARTNER] = sClefairyLevelUpLearnset,
     [SPECIES_CLEFABLE] = sClefableLevelUpLearnset,
     [SPECIES_VULPIX] = sVulpixLevelUpLearnset,
     [SPECIES_NINETALES] = sNinetalesLevelUpLearnset,

@@ -38,6 +38,7 @@ static const u32 sUnused[] =
     [SPECIES_NIDORINO]    = 0x888,
     [SPECIES_NIDOKING]    = 0x886,
     [SPECIES_CLEFAIRY]    = 0x886,
+    [SPECIES_CLEFAIRY_PARTNER]    = 0x886,
     [SPECIES_CLEFABLE]    = 0x888,
     [SPECIES_VULPIX]      = 0x88,
     [SPECIES_NINETALES]   = 0x88,

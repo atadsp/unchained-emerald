@@ -2,11 +2,11 @@ Change log:
 
 New Evolution Methods: 
 Poliwhirl -> Politoed = use Kings Rock on Poliwhirl 
-Kadabara -> Alakazam = Level to 40
+Kadabara -> Alakazam = Level to 45
 Machop -> Machoke = Level to 37
 Graveler -> Golem = Level to 37
 Slowpoke -> Slowking = use Kings Rock on Slowpoke 
-Haunter -> Gengar = Level to 40
+Haunter -> Gengar = Level to 45
 Onix -> Steelix = Use Metal Coat on Onix 
 Seadra -> Kingdra = Use Dragon Scale on Seadra
 Scyther -> Scizor = Use Metal Coat on Scyther 
@@ -134,16 +134,18 @@ Pokemon Changes:
 			Iron Hands
 			Iron Thorns
 			Roaring Moon
-			Iron Valiant
+			Iron Valinat
 			Walking Wake
+			Gouging Fire
+			Raging Bolt
 
 Move Changes: 
 	HMs can be forgotten without the Move Deleter
-	Added the following as Fairy Type Moves: (Not tested yet)
+	Added the following as Fairy Type Moves: (No animations)
 		Moonblast
-		Disarming Voice (Fairy Kiss)
+		Fairy Voice (Disarming Voice)
 		Fleur Cannon
-		Draining Kiss (Drain Kiss)
+		Drain Kiss (Draining Kiss)
 	Following changes to existing moves: 
 		Made CHARM Fairy type
 		Made Moonlight Fairy Type
@@ -264,7 +266,6 @@ Trainer Changes:
 Item changes: 
 	All of the confuse berries have been increased to 1/3 of the user's max HP
 	Sitrus berry have been increased to restore 1/4 of the user's max HP 
-	TMs should have infinite use
 	All repels now block encounters for 255 steps (so only buy base repels)
 	Light Ball now works like how it does in later gens (boosting Pikachu's attack and special attack)
 	"Usless" Field Items have been replaced including:
@@ -305,3 +306,7 @@ Current Know Issues:
 		None that I know of
 	Medium Priority:
 		No Animations for new Fairy type moves (Moves still work as expected)
+
+Special Thanks to: 
+For the Poekmon Emerald Decompilation: https://github.com/pret/pokeemerald
+For the new pokemon sprites: https://github.com/rh-hideout/pokeemerald-expansion 
